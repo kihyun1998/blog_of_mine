@@ -33,11 +33,6 @@ This is a Next.js 15 blog application built with TypeScript, Tailwind CSS, and S
 - `components/`: UI components (configured for Shadcn/ui structure)
 - `public/`: Static assets
 
-### Configuration Files
-- `components.json`: Shadcn/ui configuration with path aliases
-- `tsconfig.json`: TypeScript config with `@/*` path mapping
-- `next.config.ts`: Next.js configuration (currently minimal)
-
 ### Shadcn/ui Setup
 The project is configured with:
 - Style: "new-york"
