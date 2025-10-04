@@ -7,6 +7,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - ALWAYS ask user for permission when implementing a plan
 - NEVER use emoji for design.
 - ALWAYS prioritize server component over client component
+- ALWAYS add implemented common components to app/components-demo/page.tsx for verification
 
 ## Project Overview
 
