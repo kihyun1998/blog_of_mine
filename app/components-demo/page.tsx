@@ -4,6 +4,7 @@ import { Footer } from "@/components/ui/footer";
 import { Container } from "@/components/ui/container";
 import { BlogPostCard } from "@/components/blog/blog-post-card";
 import { BlogPostList } from "@/components/blog/blog-post-list";
+import { BlogPost } from "@/components/blog/blog-post";
 import { MarkdownRenderer } from "@/components/content/markdown-renderer";
 import { CodeBlock } from "@/components/content/code-block";
 import { SearchBarDemo } from "@/components/demo/search-bar-demo";
@@ -446,6 +447,116 @@ print(fibonacci(10))`}
               </section>
 
               <section className="space-y-4">
+                <h2 className="text-2xl font-semibold">BlogPost Component</h2>
+                <p className="text-muted-foreground mb-4">
+                  A full blog post component with metadata, social sharing, and navigation.
+                </p>
+                <BlogPost
+                  title="Understanding React Server Components"
+                  date="2024-03-20"
+                  tags={["React", "Next.js", "Server Components"]}
+                  readingTime="10 min read"
+                  author={{
+                    name: "John Doe",
+                    avatar: "/thumb/thumb1.jpg"
+                  }}
+                  content={`# Understanding React Server Components
+
+React Server Components represent a paradigm shift in how we build React applications. This article explores their benefits and use cases.
+
+## What are Server Components?
+
+Server Components are a new type of component that runs **exclusively on the server**. They allow you to:
+
+- Fetch data directly from databases
+- Access backend resources securely
+- Reduce client-side JavaScript bundle size
+- Improve initial page load performance
+
+## Key Benefits
+
+1. **Zero Bundle Size**: Server Components don't ship JavaScript to the client
+2. **Direct Backend Access**: Query databases and APIs without exposing credentials
+3. **Automatic Code Splitting**: Only client components are included in bundles
+4. **Improved Performance**: Faster initial loads and better Core Web Vitals
+
+## Example Code
+
+Here's a simple Server Component:
+
+\`\`\`tsx
+// app/posts/page.tsx (Server Component by default)
+async function BlogPosts() {
+  const posts = await db.posts.findMany();
+
+  return (
+    <div>
+      {posts.map(post => (
+        <PostCard key={post.id} post={post} />
+      ))}
+    </div>
+  );
+}
+\`\`\`
+
+## When to Use Client Components
+
+You still need Client Components for:
+
+- Interactive elements (buttons, forms)
+- Browser APIs (localStorage, geolocation)
+- State management (useState, useReducer)
+- Event handlers (onClick, onChange)
+
+## Best Practices
+
+> Always start with Server Components by default, and only use \`"use client"\` when you need interactivity or browser APIs.
+
+### Component Composition
+
+| Component Type | Use Case | Example |
+|----------------|----------|---------|
+| Server | Data fetching | Blog post list |
+| Client | Interactivity | Search bar, filters |
+| Mixed | Both | Post with comments |
+
+## Conclusion
+
+React Server Components are a powerful tool for building performant applications. By understanding when to use server vs. client components, you can create faster, more efficient React apps.
+
+[Learn more about Server Components](https://nextjs.org/docs/app/building-your-application/rendering/server-components)
+
+---
+
+Happy coding!`}
+                  previousPost={{
+                    title: "Getting Started with Next.js 15",
+                    slug: "getting-started-nextjs-15"
+                  }}
+                  nextPost={{
+                    title: "TypeScript Best Practices for 2024",
+                    slug: "typescript-best-practices-2024"
+                  }}
+                />
+              </section>
+
+              <section className="space-y-4">
+                <h2 className="text-2xl font-semibold">BlogPost Features</h2>
+                <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+                  <li>Post metadata display (title, date, tags, reading time)</li>
+                  <li>Author information with avatar support</li>
+                  <li>Social share buttons (Twitter, Facebook, LinkedIn, Copy link)</li>
+                  <li>Integrated MarkdownRenderer for content</li>
+                  <li>Previous/Next post navigation</li>
+                  <li>Responsive typography with prose classes</li>
+                  <li>Dark mode support</li>
+                  <li>Separator components for visual hierarchy</li>
+                  <li>Badge components for tags</li>
+                  <li>Icon integration (Calendar, Clock, User from Lucide)</li>
+                </ul>
+              </section>
+
+              <section className="space-y-4">
                 <h2 className="text-2xl font-semibold">Component Stack</h2>
                 <div className="grid gap-4 md:grid-cols-2">
                   <div className="p-4 border rounded-lg">
@@ -469,8 +580,10 @@ print(fibonacci(10))`}
                   <div className="p-4 border rounded-lg">
                     <h3 className="font-semibold mb-2">Blog Components</h3>
                     <ul className="text-sm text-muted-foreground space-y-1">
+                      <li>• BlogPost</li>
                       <li>• BlogPostCard</li>
                       <li>• BlogPostList</li>
+                      <li>• PostNavigation</li>
                     </ul>
                   </div>
                   <div className="p-4 border rounded-lg">
@@ -484,6 +597,7 @@ print(fibonacci(10))`}
                   <div className="p-4 border rounded-lg">
                     <h3 className="font-semibold mb-2">Shared Components</h3>
                     <ul className="text-sm text-muted-foreground space-y-1">
+                      <li>• SocialShare</li>
                       <li>• Theme Toggle</li>
                       <li>• Theme Provider</li>
                     </ul>
