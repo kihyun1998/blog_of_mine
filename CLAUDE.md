@@ -70,7 +70,8 @@ blog_of_mine/
 │   ├── content/                      # 콘텐츠 렌더링
 │   │   ├── markdown-renderer.tsx    # Markdown rendering component
 │   │   ├── code-block.tsx           # Code block with syntax highlighting
-│   │   └── copy-button.tsx          # Copy to clipboard button
+│   │   ├── copy-button.tsx          # Copy to clipboard button
+│   │   └── table-of-contents.tsx    # Table of contents component
 │   ├── shared/                       # 작은 재사용 컴포넌트
 │   │   ├── theme-toggle.tsx         # Dark mode toggle
 │   │   ├── social-share.tsx         # Social share buttons

@@ -56,16 +56,23 @@
 - [x] Add debounced search functionality
 - [x] Simple results dropdown
 
+### 9. TableOfContents
+- [ ] Create `components/content/table-of-contents.tsx`
+- [ ] Extract headings (h2, h3) from markdown content
+- [ ] Generate anchor IDs for each heading (slug conversion)
+- [ ] Implement click-to-scroll functionality
+- [ ] Add active section highlighting (Intersection Observer)
+- [ ] Style with indentation for heading hierarchy
 
 ## Layout Components
 
-### 9. Container
+### 10. Container
 - [x] Create `components/ui/container.tsx`
 - [x] Implement responsive max-width container
 - [x] Add proper padding and margin utilities
 - [x] Support different container sizes
 
-### 10. Pagination
+### 11. Pagination
 - [x] Create `components/ui/pagination.tsx`
 - [x] Simple numbered pagination with prev/next
 - [x] Highlight current page
