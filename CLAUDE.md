@@ -58,10 +58,45 @@ blog_of_mine/
 │   ├── globals.css          # Global Tailwind CSS styles
 │   ├── layout.tsx           # Root layout with font configuration
 │   └── page.tsx             # Home page component
+├── components/
+│   ├── blog/
+│   │   ├── blog-post.tsx           # Individual post full rendering
+│   │   ├── blog-post-card.tsx      # Post card for list view
+│   │   ├── blog-post-list.tsx      # Post list with grid layout
+│   │   └── post-navigation.tsx     # Previous/Next post navigation
+│   ├── content/
+│   │   ├── markdown-renderer.tsx   # Markdown rendering component
+│   │   └── code-block.tsx          # Code block with syntax highlighting
+│   ├── ui/
+│   │   ├── header.tsx              # Header/Navigation
+│   │   ├── footer.tsx              # Footer
+│   │   ├── container.tsx           # Layout container
+│   │   ├── search-bar.tsx          # Search bar
+│   │   ├── tag-cloud.tsx           # Tag cloud
+│   │   ├── pagination.tsx          # Pagination component
+│   │   └── ...                     # Shadcn/ui components
+│   └── shared/
+│       ├── social-share.tsx        # Social share buttons
+│       ├── reading-time.tsx        # Reading time display
+│       └── theme-toggle.tsx        # Dark mode toggle
 └── lib/
     └── utils.ts             # Utility functions (cn helper)
 
 ```
+
+### Component Organization Strategy
+
+- **blog/**: Blog core functionality (post-related components)
+- **content/**: Content rendering components (Markdown, Code)
+- **ui/**: General UI components (Shadcn/ui and custom components)
+- **shared/**: Small reusable components used across multiple features
+
+### Implementation Phase Recommendations
+
+1. **Phase 1 (Basic Layout)**: Container, Header, Footer
+2. **Phase 2 (Content Rendering)**: MarkdownRenderer, CodeBlock
+3. **Phase 3 (Blog Core)**: BlogPost, BlogPostCard, BlogPostList
+4. **Phase 4 (Additional Features)**: SearchBar, TagCloud, Pagination, shared components
 
 ## Development Notes
 
