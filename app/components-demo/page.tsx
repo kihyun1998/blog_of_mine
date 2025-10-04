@@ -8,6 +8,8 @@ import { MarkdownRenderer } from "@/components/content/markdown-renderer";
 import { CodeBlock } from "@/components/content/code-block";
 import { SearchBarDemo } from "@/components/demo/search-bar-demo";
 import { TagCloud } from "@/components/ui/tag-cloud";
+import { Pagination } from "@/components/ui/pagination";
+import { PaginationClient } from "@/components/ui/pagination-client";
 
 const THUMB_COUNT = 2;
 const getRandomThumb = () => `/thumb/thumb${Math.floor(Math.random() * THUMB_COUNT) + 1}.jpg`;
@@ -440,6 +442,53 @@ print(fibonacci(10))`}
               </section>
 
               <section className="space-y-4">
+                <h2 className="text-2xl font-semibold">Pagination Component</h2>
+                <p className="text-muted-foreground mb-4">
+                  Server-side pagination component with URL-based navigation.
+                </p>
+                <div className="space-y-6">
+                  <div className="border rounded-lg p-6">
+                    <p className="text-sm font-medium mb-4">Basic Pagination (Server Component)</p>
+                    <Pagination currentPage={3} totalPages={10} baseUrl="/blog" />
+                  </div>
+                  <div className="border rounded-lg p-6">
+                    <p className="text-sm font-medium mb-4">Few Pages</p>
+                    <Pagination currentPage={2} totalPages={3} baseUrl="/blog" />
+                  </div>
+                  <div className="border rounded-lg p-6">
+                    <p className="text-sm font-medium mb-4">First Page</p>
+                    <Pagination currentPage={1} totalPages={15} baseUrl="/blog" />
+                  </div>
+                  <div className="border rounded-lg p-6">
+                    <p className="text-sm font-medium mb-4">Last Page</p>
+                    <Pagination currentPage={15} totalPages={15} baseUrl="/blog" />
+                  </div>
+                  <div className="border rounded-lg p-6">
+                    <p className="text-sm font-medium mb-4">Many Pages (with ellipsis)</p>
+                    <Pagination currentPage={8} totalPages={20} baseUrl="/blog" />
+                  </div>
+                </div>
+              </section>
+
+              <section className="space-y-4">
+                <h2 className="text-2xl font-semibold">Pagination Features</h2>
+                <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+                  <li>Server component version with Next.js Link for SEO</li>
+                  <li>Client component version for dynamic filtering</li>
+                  <li>Previous/Next navigation buttons</li>
+                  <li>Numbered page buttons with current page highlight</li>
+                  <li>Ellipsis (...) for many pages</li>
+                  <li>Smart page number display (shows first, last, and surrounding pages)</li>
+                  <li>Configurable max visible pages (default: 5)</li>
+                  <li>Disabled state for current page and boundary buttons</li>
+                  <li>ARIA labels for accessibility</li>
+                  <li>URL-based navigation (?page=N) for server component</li>
+                  <li>Callback-based for client component</li>
+                  <li>Mobile-responsive with touch-friendly buttons</li>
+                </ul>
+              </section>
+
+              <section className="space-y-4">
                 <h2 className="text-2xl font-semibold">Component Stack</h2>
                 <div className="grid gap-4 md:grid-cols-2">
                   <div className="p-4 border rounded-lg">
@@ -450,6 +499,7 @@ print(fibonacci(10))`}
                       <li>• Footer</li>
                       <li>• SearchBar</li>
                       <li>• TagCloud</li>
+                      <li>• Pagination</li>
                       <li>• Button (Shadcn)</li>
                       <li>• Sheet (Shadcn)</li>
                       <li>• Card (Shadcn)</li>
