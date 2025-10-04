@@ -2,6 +2,7 @@ import { ThemeProvider } from "@/components/providers/theme-provider";
 import { Header } from "@/components/ui/header";
 import { Footer } from "@/components/ui/footer";
 import { Container } from "@/components/ui/container";
+import { BlogPostCard } from "@/components/blog/blog-post-card";
 
 export default function ComponentsDemoPage() {
   return (
@@ -103,6 +104,55 @@ export default function ComponentsDemoPage() {
               </section>
 
               <section className="space-y-4">
+                <h2 className="text-2xl font-semibold">BlogPostCard Component</h2>
+                <p className="text-muted-foreground mb-4">
+                  A reusable card component for displaying blog post previews with thumbnail, metadata, and tags.
+                </p>
+                <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                  <BlogPostCard
+                    title="Getting Started with Next.js 15"
+                    excerpt="Learn how to build modern web applications with Next.js 15, featuring the new App Router, Server Components, and improved performance."
+                    date="2024-03-15"
+                    tags={["Next.js", "React", "Tutorial"]}
+                    slug="getting-started-nextjs-15"
+                    thumbnail="https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&h=450&fit=crop"
+                    readingTime={5}
+                  />
+                  <BlogPostCard
+                    title="TypeScript Best Practices for 2024"
+                    excerpt="Discover the latest TypeScript patterns and best practices to write more maintainable and type-safe code in your projects."
+                    date="2024-03-10"
+                    tags={["TypeScript", "Best Practices"]}
+                    slug="typescript-best-practices-2024"
+                    thumbnail="https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=800&h=450&fit=crop"
+                    readingTime={8}
+                  />
+                  <BlogPostCard
+                    title="Building Responsive UIs with Tailwind CSS"
+                    excerpt="Master responsive design with Tailwind CSS utility classes and create beautiful, mobile-first user interfaces."
+                    date="2024-03-05"
+                    tags={["CSS", "Tailwind", "Design"]}
+                    slug="responsive-ui-tailwind"
+                    readingTime={6}
+                  />
+                </div>
+              </section>
+
+              <section className="space-y-4">
+                <h2 className="text-2xl font-semibold">BlogPostCard Features</h2>
+                <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+                  <li>Thumbnail image support with Next.js Image optimization</li>
+                  <li>Smooth hover effects (shadow and translate-y animation)</li>
+                  <li>Image scale-up effect on hover</li>
+                  <li>Display of title, excerpt, date, and tags</li>
+                  <li>Reading time estimation with clock icon</li>
+                  <li>Responsive design with proper aspect ratios</li>
+                  <li>Line-clamp for text overflow handling</li>
+                  <li>Badge components for tags with secondary variant</li>
+                </ul>
+              </section>
+
+              <section className="space-y-4">
                 <h2 className="text-2xl font-semibold">Component Stack</h2>
                 <div className="grid gap-4 md:grid-cols-2">
                   <div className="p-4 border rounded-lg">
@@ -113,6 +163,14 @@ export default function ComponentsDemoPage() {
                       <li>• Footer</li>
                       <li>• Button (Shadcn)</li>
                       <li>• Sheet (Shadcn)</li>
+                      <li>• Card (Shadcn)</li>
+                      <li>• Badge (Shadcn)</li>
+                    </ul>
+                  </div>
+                  <div className="p-4 border rounded-lg">
+                    <h3 className="font-semibold mb-2">Blog Components</h3>
+                    <ul className="text-sm text-muted-foreground space-y-1">
+                      <li>• BlogPostCard</li>
                     </ul>
                   </div>
                   <div className="p-4 border rounded-lg">
