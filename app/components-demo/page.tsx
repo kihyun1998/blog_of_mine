@@ -6,6 +6,7 @@ import { BlogPostCard } from "@/components/blog/blog-post-card";
 import { BlogPostList } from "@/components/blog/blog-post-list";
 import { MarkdownRenderer } from "@/components/content/markdown-renderer";
 import { CodeBlock } from "@/components/content/code-block";
+import { SearchBarDemo } from "@/components/demo/search-bar-demo";
 
 const THUMB_COUNT = 2;
 const getRandomThumb = () => `/thumb/thumb${Math.floor(Math.random() * THUMB_COUNT) + 1}.jpg`;
@@ -373,6 +374,29 @@ print(fibonacci(10))`}
               </section>
 
               <section className="space-y-4">
+                <h2 className="text-2xl font-semibold">SearchBar Component</h2>
+                <p className="text-muted-foreground mb-4">
+                  A search bar component with debounced input and dropdown results using Command component.
+                </p>
+                <SearchBarDemo />
+              </section>
+
+              <section className="space-y-4">
+                <h2 className="text-2xl font-semibold">SearchBar Features</h2>
+                <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+                  <li>Debounced search input (300ms delay)</li>
+                  <li>Search icon with clear button (X icon)</li>
+                  <li>Dropdown results using Shadcn Command component</li>
+                  <li>Loading state support</li>
+                  <li>Empty state when no results found</li>
+                  <li>Result items show title and excerpt</li>
+                  <li>Keyboard navigation support</li>
+                  <li>Click outside to close dropdown</li>
+                  <li>Custom hook: useDebounce for reusable debouncing</li>
+                </ul>
+              </section>
+
+              <section className="space-y-4">
                 <h2 className="text-2xl font-semibold">Component Stack</h2>
                 <div className="grid gap-4 md:grid-cols-2">
                   <div className="p-4 border rounded-lg">
@@ -381,11 +405,15 @@ print(fibonacci(10))`}
                       <li>• Container</li>
                       <li>• Header</li>
                       <li>• Footer</li>
+                      <li>• SearchBar</li>
                       <li>• Button (Shadcn)</li>
                       <li>• Sheet (Shadcn)</li>
                       <li>• Card (Shadcn)</li>
                       <li>• Badge (Shadcn)</li>
                       <li>• Select (Shadcn)</li>
+                      <li>• Input (Shadcn)</li>
+                      <li>• Popover (Shadcn)</li>
+                      <li>• Command (Shadcn)</li>
                     </ul>
                   </div>
                   <div className="p-4 border rounded-lg">
