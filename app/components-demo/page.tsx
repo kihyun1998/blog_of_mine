@@ -7,7 +7,6 @@ import { BlogPostList } from "@/components/blog/blog-post-list";
 import { MarkdownRenderer } from "@/components/content/markdown-renderer";
 import { CodeBlock } from "@/components/content/code-block";
 import { SearchBarDemo } from "@/components/demo/search-bar-demo";
-import { TagCloud } from "@/components/ui/tag-cloud";
 import { Pagination } from "@/components/ui/pagination";
 import { PaginationClient } from "@/components/ui/pagination-client";
 
@@ -400,48 +399,6 @@ print(fibonacci(10))`}
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-semibold">TagCloud Component</h2>
-                <p className="text-muted-foreground mb-4">
-                  A tag cloud component that displays tags with sizes based on usage frequency.
-                </p>
-                <div className="border rounded-lg p-6">
-                  <TagCloud
-                    tags={[
-                      { name: "React", count: 15, slug: "react" },
-                      { name: "TypeScript", count: 12, slug: "typescript" },
-                      { name: "Next.js", count: 10, slug: "nextjs" },
-                      { name: "Tailwind", count: 8, slug: "tailwind" },
-                      { name: "CSS", count: 7, slug: "css" },
-                      { name: "JavaScript", count: 6, slug: "javascript" },
-                      { name: "Tutorial", count: 5, slug: "tutorial" },
-                      { name: "Best Practices", count: 4, slug: "best-practices" },
-                      { name: "Performance", count: 3, slug: "performance" },
-                      { name: "Design", count: 2, slug: "design" },
-                      { name: "Git", count: 2, slug: "git" },
-                      { name: "DevOps", count: 1, slug: "devops" },
-                    ]}
-                    maxSize={24}
-                    minSize={12}
-                  />
-                </div>
-              </section>
-
-              <section className="space-y-4">
-                <h2 className="text-2xl font-semibold">TagCloud Features</h2>
-                <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-                  <li>Tag size based on usage frequency (count)</li>
-                  <li>Configurable min/max font sizes</li>
-                  <li>Hover effects with scale animation</li>
-                  <li>Click navigation to filtered posts (/blog?tag=slug)</li>
-                  <li>Uses Shadcn Badge component</li>
-                  <li>Shows tag count in parentheses</li>
-                  <li>Responsive flexbox layout with wrapping</li>
-                  <li>Dark mode support</li>
-                  <li>Server component (uses Next.js Link)</li>
-                </ul>
-              </section>
-
-              <section className="space-y-4">
                 <h2 className="text-2xl font-semibold">Pagination Component</h2>
                 <p className="text-muted-foreground mb-4">
                   Server-side pagination component with URL-based navigation.
@@ -498,7 +455,6 @@ print(fibonacci(10))`}
                       <li>• Header</li>
                       <li>• Footer</li>
                       <li>• SearchBar</li>
-                      <li>• TagCloud</li>
                       <li>• Pagination</li>
                       <li>• Button (Shadcn)</li>
                       <li>• Sheet (Shadcn)</li>

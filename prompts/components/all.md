@@ -56,21 +56,16 @@
 - [x] Add debounced search functionality
 - [x] Simple results dropdown
 
-### 9. TagCloud
-- [x] Create `components/ui/tag-cloud.tsx`
-- [x] Display tags with different sizes based on usage
-- [x] Add click navigation to filtered posts
-- [x] Hover effects and animations
 
 ## Layout Components
 
-### 10. Container
+### 9. Container
 - [x] Create `components/ui/container.tsx`
 - [x] Implement responsive max-width container
 - [x] Add proper padding and margin utilities
 - [x] Support different container sizes
 
-### 11. Pagination
+### 10. Pagination
 - [x] Create `components/ui/pagination.tsx`
 - [x] Simple numbered pagination with prev/next
 - [x] Highlight current page
