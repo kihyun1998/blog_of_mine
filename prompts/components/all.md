@@ -15,6 +15,15 @@
 - [ ] Add social share buttons component
 - [ ] Create previous/next post navigation
 - [ ] Integrate with MarkdownRenderer
+- [ ] Add Table of Contents (ToC) component integration
+
+### 2-1. TableOfContents (ToC)
+- [ ] Create `components/content/table-of-contents.tsx`
+- [ ] Extract headings (h2, h3) from markdown content
+- [ ] Generate anchor links for each heading
+- [ ] Add smooth scroll to section on click
+- [ ] Highlight active section on scroll (optional)
+- [ ] Sticky positioning on desktop, collapsible on mobile
 
 ### 3. BlogPostCard
 - [x] Create `components/blog/blog-post-card.tsx`
