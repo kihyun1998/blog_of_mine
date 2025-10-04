@@ -2,6 +2,12 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## IMPORTANT
+- ALWAYS use Shadcn MCP to create UI
+- ALWAYS ask user for permission when implementing a plan
+- NEVER use emoji for design.
+- ALWAYS prioritize server component over client component
+
 ## Project Overview
 
 This is a Next.js 15 blog application built with TypeScript, Tailwind CSS, and Shadcn/ui components. The project uses the App Router architecture and is configured for Turbopack development.
