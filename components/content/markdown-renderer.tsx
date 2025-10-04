@@ -1,6 +1,6 @@
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
-import { cn } from '@/lib/utils'
+import { cn, generateSlug } from '@/lib/utils'
 
 interface MarkdownRendererProps {
   content: string
@@ -16,12 +16,24 @@ export function MarkdownRenderer({ content, className }: MarkdownRendererProps) 
         h1: ({ children }) => (
           <h1 className="text-4xl font-bold mt-8 mb-4 text-foreground">{children}</h1>
         ),
-        h2: ({ children }) => (
-          <h2 className="text-3xl font-bold mt-6 mb-3 text-foreground">{children}</h2>
-        ),
-        h3: ({ children }) => (
-          <h3 className="text-2xl font-semibold mt-5 mb-2 text-foreground">{children}</h3>
-        ),
+        h2: ({ children }) => {
+          const text = String(children)
+          const id = generateSlug(text)
+          return (
+            <h2 id={id} className="text-3xl font-bold mt-6 mb-3 text-foreground scroll-mt-20">
+              {children}
+            </h2>
+          )
+        },
+        h3: ({ children }) => {
+          const text = String(children)
+          const id = generateSlug(text)
+          return (
+            <h3 id={id} className="text-2xl font-semibold mt-5 mb-2 text-foreground scroll-mt-20">
+              {children}
+            </h3>
+          )
+        },
         h4: ({ children }) => (
           <h4 className="text-xl font-semibold mt-4 mb-2 text-foreground">{children}</h4>
         ),

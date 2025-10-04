@@ -10,6 +10,7 @@ import { CodeBlock } from "@/components/content/code-block";
 import { SearchBarDemo } from "@/components/demo/search-bar-demo";
 import { Pagination } from "@/components/ui/pagination";
 import { PaginationClient } from "@/components/ui/pagination-client";
+import { TableOfContents } from "@/components/content/table-of-contents";
 
 const THUMB_COUNT = 2;
 const getRandomThumb = () => `/thumb/thumb${Math.floor(Math.random() * THUMB_COUNT) + 1}.jpg`;
@@ -557,6 +558,111 @@ Happy coding!`}
               </section>
 
               <section className="space-y-4">
+                <h2 className="text-2xl font-semibold">TableOfContents Component</h2>
+                <p className="text-muted-foreground mb-4">
+                  A table of contents component that automatically extracts headings from markdown content with active section tracking.
+                </p>
+                <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1fr_250px]">
+                  <div className="border rounded-lg p-6">
+                    <MarkdownRenderer
+                      content={`# Main Title
+
+This is some introductory content before the first heading.
+
+## First Section
+
+This is the content of the first section. It contains important information about the topic.
+
+### Subsection 1.1
+
+Details about the first subsection. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+### Subsection 1.2
+
+More details in another subsection. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+## Second Section
+
+Here's another major section with different content. This demonstrates how the table of contents handles multiple sections.
+
+### Subsection 2.1
+
+Content for this subsection goes here. The table of contents will highlight the active section as you scroll.
+
+### Subsection 2.2
+
+Additional subsection content to showcase the hierarchy.
+
+## Third Section
+
+Final section to demonstrate the full functionality of the table of contents component.
+
+### Subsection 3.1
+
+Last subsection with some closing remarks and examples.`}
+                    />
+                  </div>
+                  <div className="hidden lg:block">
+                    <div className="sticky top-20 border rounded-lg p-4">
+                      <TableOfContents
+                        content={`# Main Title
+
+This is some introductory content before the first heading.
+
+## First Section
+
+This is the content of the first section. It contains important information about the topic.
+
+### Subsection 1.1
+
+Details about the first subsection. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+### Subsection 1.2
+
+More details in another subsection. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+## Second Section
+
+Here's another major section with different content. This demonstrates how the table of contents handles multiple sections.
+
+### Subsection 2.1
+
+Content for this subsection goes here. The table of contents will highlight the active section as you scroll.
+
+### Subsection 2.2
+
+Additional subsection content to showcase the hierarchy.
+
+## Third Section
+
+Final section to demonstrate the full functionality of the table of contents component.
+
+### Subsection 3.1
+
+Last subsection with some closing remarks and examples.`}
+                      />
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section className="space-y-4">
+                <h2 className="text-2xl font-semibold">TableOfContents Features</h2>
+                <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+                  <li>Automatic heading extraction from markdown (h2 and h3)</li>
+                  <li>Generates URL-safe slugs for anchor IDs</li>
+                  <li>Smooth scroll behavior on click</li>
+                  <li>Active section highlighting using Intersection Observer</li>
+                  <li>Hierarchical indentation (h2 vs h3)</li>
+                  <li>Sticky positioning for desktop sidebar</li>
+                  <li>Hidden on mobile, visible on large screens</li>
+                  <li>Synchronized with MarkdownRenderer heading IDs</li>
+                  <li>URL hash updates on navigation</li>
+                  <li>Server Component for heading parsing, Client Component for interactivity</li>
+                </ul>
+              </section>
+
+              <section className="space-y-4">
                 <h2 className="text-2xl font-semibold">Component Stack</h2>
                 <div className="grid gap-4 md:grid-cols-2">
                   <div className="p-4 border rounded-lg">
@@ -592,6 +698,7 @@ Happy coding!`}
                       <li>• MarkdownRenderer</li>
                       <li>• CodeBlock</li>
                       <li>• CopyButton</li>
+                      <li>• TableOfContents</li>
                     </ul>
                   </div>
                   <div className="p-4 border rounded-lg">
