@@ -78,6 +78,64 @@
 - [x] Highlight current page
 - [x] Mobile-responsive design
 
+## Home Page Components
+
+### 12. Hero Section
+- [ ] Create `components/ui/hero-section.tsx`
+- [ ] Add main title (h1) and subtitle/description (p)
+- [ ] Support primary and secondary CTA buttons (optional props)
+- [ ] Implement gradient or neutral background
+- [ ] Responsive typography (mobile: smaller, desktop: larger)
+- [ ] Use existing Shadcn Button component
+- [ ] Implement as Server Component
+
+**Props Interface:**
+```typescript
+interface HeroSectionProps {
+  title: string
+  description: string
+  primaryCta?: { text: string; href: string }
+  secondaryCta?: { text: string; href: string }
+}
+```
+
+**Layout:**
+- Full-width section with Container wrapper
+- Center-aligned content
+- Vertical spacing: py-16 md:py-24
+- Title: text-4xl md:text-6xl font-bold
+- Description: text-lg md:text-xl text-muted-foreground
+
+### 13. CTA Section
+- [ ] Create `components/ui/cta-section.tsx`
+- [ ] Add title and description text
+- [ ] Support social links array (platform, url, icon)
+- [ ] Display social icons in horizontal grid/flex layout
+- [ ] Use Card component or colored background section
+- [ ] Center-aligned layout
+- [ ] Implement as Server Component
+
+**Props Interface:**
+```typescript
+interface CTASectionProps {
+  title: string
+  description: string
+  socialLinks: Array<{
+    platform: string
+    url: string
+    icon: ReactNode
+  }>
+}
+```
+
+**Layout:**
+- Card-based or background section
+- Center-aligned content
+- Social links: flex gap-4 justify-center
+- Icon size: 24px (Lucide icons)
+- Vertical spacing: py-12 md:py-16
+- Place above Footer in page layout
+
 ## Implementation Notes
 
 - Use Shadcn/ui components where possible
@@ -87,3 +145,5 @@
 - Keep components simple and focused
 - Use Next.js App Router patterns
 - Add proper prop types and interfaces
+- **Prioritize Server Components over Client Components**
+- **NO emojis in design or code**

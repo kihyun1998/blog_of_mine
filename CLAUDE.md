@@ -61,7 +61,9 @@ blog_of_mine/
 │   │   ├── container.tsx            # Layout container
 │   │   ├── search-bar.tsx           # Search bar
 │   │   ├── pagination.tsx           # Pagination component
-│   │   └── ...                      # Shadcn/ui components
+│   │   ├── hero-section.tsx         # Hero section for home page
+│   │   ├── cta-section.tsx          # CTA section with social links
+│   │   └── ...                      # Shadcn/ui components (button, card, etc.)
 │   ├── blog/                         # 블로그 핵심 컴포넌트
 │   │   ├── blog-post.tsx            # Individual post full rendering
 │   │   ├── blog-post-card.tsx       # Post card for list view
@@ -85,17 +87,20 @@ blog_of_mine/
 
 ### Component Organization Strategy
 
-- **blog/**: Blog core functionality (post-related components)
-- **content/**: Content rendering components (Markdown, Code)
-- **ui/**: General UI components (Shadcn/ui and custom components)
-- **shared/**: Small reusable components used across multiple features
+- **ui/**: General-purpose UI components including Shadcn/ui components and custom layout components (Header, Footer, Container, Hero, CTA sections, etc.)
+- **blog/**: Blog-specific core components (BlogPost, BlogPostCard, BlogPostList, PostNavigation)
+- **content/**: Content rendering components (MarkdownRenderer, CodeBlock, TableOfContents)
+- **shared/**: Small reusable utility components used across multiple features (ThemeToggle, SocialShare, ReadingTime)
+- **providers/**: Context providers (ThemeProvider)
 
 ### Implementation Phase Recommendations
 
 1. **Phase 1 (Basic Layout)**: Container, Header, Footer
 2. **Phase 2 (Content Rendering)**: MarkdownRenderer, CodeBlock
 3. **Phase 3 (Blog Core)**: BlogPost, BlogPostCard, BlogPostList
-4. **Phase 4 (Additional Features)**: SearchBar, TagCloud, Pagination, shared components
+4. **Phase 4 (Additional Features)**: SearchBar, Pagination, shared components
+5. **Phase 5 (Home Page)**: HeroSection, CTASection
+6. **Phase 6 (Enhancement)**: TableOfContents, SocialShare
 
 ## Development Notes
 
