@@ -4,6 +4,7 @@ import { Footer } from "@/components/ui/footer";
 import { Container } from "@/components/ui/container";
 import { BlogPostCard } from "@/components/blog/blog-post-card";
 import { BlogPostList } from "@/components/blog/blog-post-list";
+import { MarkdownRenderer } from "@/components/content/markdown-renderer";
 
 const THUMB_COUNT = 2;
 const getRandomThumb = () => `/thumb/thumb${Math.floor(Math.random() * THUMB_COUNT) + 1}.jpg`;
@@ -236,6 +237,86 @@ export default function ComponentsDemoPage() {
               </section>
 
               <section className="space-y-4">
+                <h2 className="text-2xl font-semibold">MarkdownRenderer Component</h2>
+                <p className="text-muted-foreground mb-4">
+                  A component for rendering markdown content with GitHub Flavored Markdown support.
+                </p>
+                <div className="border rounded-lg p-6">
+                  <MarkdownRenderer
+                    content={`# Welcome to MarkdownRenderer
+
+This is a **markdown renderer** component that supports _various_ markdown features.
+
+## Features
+
+- GitHub Flavored Markdown support
+- Syntax highlighting for code blocks
+- Tables, lists, and blockquotes
+- Custom styled components
+- Dark mode support
+
+### Code Example
+
+Here's some \`inline code\` and a code block:
+
+\`\`\`typescript
+function greet(name: string): string {
+  return \`Hello, \${name}!\`;
+}
+\`\`\`
+
+### Lists
+
+1. First ordered item
+2. Second ordered item
+3. Third ordered item
+
+- Unordered item
+- Another item
+  - Nested item
+
+### Blockquote
+
+> This is a blockquote. It can contain **bold** and *italic* text.
+
+### Table
+
+| Feature | Supported |
+|---------|-----------|
+| Headers | ✓ |
+| Lists | ✓ |
+| Code | ✓ |
+| Tables | ✓ |
+
+### Links
+
+Visit [Next.js](https://nextjs.org) for more information.
+
+---
+
+That's all for now!`}
+                  />
+                </div>
+              </section>
+
+              <section className="space-y-4">
+                <h2 className="text-2xl font-semibold">MarkdownRenderer Features</h2>
+                <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+                  <li>GitHub Flavored Markdown (GFM) support with remark-gfm</li>
+                  <li>Custom styled heading components (h1-h6)</li>
+                  <li>External link handling with target="_blank"</li>
+                  <li>Inline code with background styling</li>
+                  <li>Code blocks with syntax highlighting container</li>
+                  <li>Styled lists (ordered and unordered)</li>
+                  <li>Blockquotes with border and italic styling</li>
+                  <li>Responsive tables with hover effects</li>
+                  <li>Image support with responsive sizing</li>
+                  <li>Dark mode support with Tailwind prose classes</li>
+                  <li>Horizontal rule styling</li>
+                </ul>
+              </section>
+
+              <section className="space-y-4">
                 <h2 className="text-2xl font-semibold">Component Stack</h2>
                 <div className="grid gap-4 md:grid-cols-2">
                   <div className="p-4 border rounded-lg">
@@ -256,6 +337,12 @@ export default function ComponentsDemoPage() {
                     <ul className="text-sm text-muted-foreground space-y-1">
                       <li>• BlogPostCard</li>
                       <li>• BlogPostList</li>
+                    </ul>
+                  </div>
+                  <div className="p-4 border rounded-lg">
+                    <h3 className="font-semibold mb-2">Content Components</h3>
+                    <ul className="text-sm text-muted-foreground space-y-1">
+                      <li>• MarkdownRenderer</li>
                     </ul>
                   </div>
                   <div className="p-4 border rounded-lg">
