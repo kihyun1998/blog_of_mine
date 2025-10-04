@@ -5,6 +5,7 @@ import { Container } from "@/components/ui/container";
 import { BlogPostCard } from "@/components/blog/blog-post-card";
 import { BlogPostList } from "@/components/blog/blog-post-list";
 import { MarkdownRenderer } from "@/components/content/markdown-renderer";
+import { CodeBlock } from "@/components/content/code-block";
 
 const THUMB_COUNT = 2;
 const getRandomThumb = () => `/thumb/thumb${Math.floor(Math.random() * THUMB_COUNT) + 1}.jpg`;
@@ -317,6 +318,61 @@ That's all for now!`}
               </section>
 
               <section className="space-y-4">
+                <h2 className="text-2xl font-semibold">CodeBlock Component</h2>
+                <p className="text-muted-foreground mb-4">
+                  A syntax-highlighted code block component with copy functionality.
+                </p>
+                <div className="space-y-4">
+                  <CodeBlock
+                    code={`function greet(name: string): string {
+  return \`Hello, \${name}!\`;
+}
+
+const message = greet("World");
+console.log(message);`}
+                    language="typescript"
+                    filename="example.ts"
+                  />
+                  <CodeBlock
+                    code={`import React from 'react';
+
+export default function App() {
+  return (
+    <div className="container">
+      <h1>Hello React!</h1>
+    </div>
+  );
+}`}
+                    language="tsx"
+                  />
+                  <CodeBlock
+                    code={`def fibonacci(n):
+    if n <= 1:
+        return n
+    return fibonacci(n-1) + fibonacci(n-2)
+
+print(fibonacci(10))`}
+                    language="python"
+                    filename="fibonacci.py"
+                  />
+                </div>
+              </section>
+
+              <section className="space-y-4">
+                <h2 className="text-2xl font-semibold">CodeBlock Features</h2>
+                <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+                  <li>Syntax highlighting with Prism.js</li>
+                  <li>Copy to clipboard functionality</li>
+                  <li>Language label display</li>
+                  <li>Optional filename display</li>
+                  <li>Visual feedback on copy (checkmark icon)</li>
+                  <li>Dark mode compatible styling</li>
+                  <li>Horizontal scrolling for long code lines</li>
+                  <li>Support for multiple languages (TS, JS, Python, Bash, JSON, CSS, etc.)</li>
+                </ul>
+              </section>
+
+              <section className="space-y-4">
                 <h2 className="text-2xl font-semibold">Component Stack</h2>
                 <div className="grid gap-4 md:grid-cols-2">
                   <div className="p-4 border rounded-lg">
@@ -343,6 +399,8 @@ That's all for now!`}
                     <h3 className="font-semibold mb-2">Content Components</h3>
                     <ul className="text-sm text-muted-foreground space-y-1">
                       <li>• MarkdownRenderer</li>
+                      <li>• CodeBlock</li>
+                      <li>• CopyButton</li>
                     </ul>
                   </div>
                   <div className="p-4 border rounded-lg">
