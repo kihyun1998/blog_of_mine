@@ -11,6 +11,7 @@ import { SearchBarDemo } from "@/components/demo/search-bar-demo";
 import { Pagination } from "@/components/ui/pagination";
 import { PaginationClient } from "@/components/ui/pagination-client";
 import { TableOfContents } from "@/components/content/table-of-contents";
+import { HeroSection } from "@/components/ui/hero-section";
 
 const THUMB_COUNT = 2;
 const getRandomThumb = () => `/thumb/thumb${Math.floor(Math.random() * THUMB_COUNT) + 1}.jpg`;
@@ -663,6 +664,50 @@ Last subsection with some closing remarks and examples.`}
               </section>
 
               <section className="space-y-4">
+                <h2 className="text-2xl font-semibold">HeroSection Component</h2>
+                <p className="text-muted-foreground mb-4">
+                  A hero section component for landing pages with title, description, and optional CTA buttons.
+                </p>
+                <div className="border rounded-lg overflow-hidden">
+                  <HeroSection
+                    title="Welcome to My Blog"
+                    description="Discover insightful articles about web development, design, and technology. Join our community of developers and designers."
+                    primaryCta={{ text: "Get Started", href: "/blog" }}
+                    secondaryCta={{ text: "Learn More", href: "/about" }}
+                  />
+                </div>
+                <div className="border rounded-lg overflow-hidden mt-4">
+                  <HeroSection
+                    title="Build Modern Web Applications"
+                    description="Learn the latest techniques in Next.js, React, and TypeScript to create fast, scalable applications."
+                  />
+                </div>
+                <div className="border rounded-lg overflow-hidden mt-4">
+                  <HeroSection
+                    title="Ready to Start Your Journey?"
+                    description="Explore our comprehensive guides and tutorials designed for developers of all skill levels."
+                    primaryCta={{ text: "Browse Articles", href: "/blog" }}
+                  />
+                </div>
+              </section>
+
+              <section className="space-y-4">
+                <h2 className="text-2xl font-semibold">HeroSection Features</h2>
+                <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+                  <li>Server Component (no client-side JavaScript)</li>
+                  <li>Responsive typography (text-4xl on mobile, text-6xl on desktop)</li>
+                  <li>Optional primary and secondary CTA buttons</li>
+                  <li>Uses Shadcn/ui Button component with Next.js Link</li>
+                  <li>Center-aligned content layout</li>
+                  <li>Vertical spacing: py-16 on mobile, py-24 on desktop</li>
+                  <li>Integrates with Container component for responsive width</li>
+                  <li>Dark mode support via Tailwind classes</li>
+                  <li>Description with muted-foreground styling</li>
+                  <li>Flexible button layout (stacked on mobile, horizontal on desktop)</li>
+                </ul>
+              </section>
+
+              <section className="space-y-4">
                 <h2 className="text-2xl font-semibold">Component Stack</h2>
                 <div className="grid gap-4 md:grid-cols-2">
                   <div className="p-4 border rounded-lg">
@@ -671,6 +716,7 @@ Last subsection with some closing remarks and examples.`}
                       <li>• Container</li>
                       <li>• Header</li>
                       <li>• Footer</li>
+                      <li>• HeroSection</li>
                       <li>• SearchBar</li>
                       <li>• Pagination</li>
                       <li>• Button (Shadcn)</li>
