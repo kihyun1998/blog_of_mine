@@ -4,7 +4,6 @@ export interface PostFrontmatter {
   excerpt: string
   tags: string[]
   category?: string
-  thumbnail?: string
   author?: {
     name: string
     avatar?: string

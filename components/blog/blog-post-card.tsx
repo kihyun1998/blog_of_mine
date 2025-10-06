@@ -7,7 +7,6 @@ import {
 } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import { Calendar, Clock } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 
 interface BlogPostCardProps {
@@ -16,7 +15,6 @@ interface BlogPostCardProps {
   date: string;
   tags: string[];
   slug: string;
-  thumbnail?: string;
   readingTime: number;
   className?: string;
 }
@@ -27,7 +25,6 @@ export function BlogPostCard({
   date,
   tags,
   slug,
-  thumbnail,
   readingTime,
   className,
 }: BlogPostCardProps) {
@@ -36,22 +33,9 @@ export function BlogPostCard({
       <Card
         className={cn(
           "h-full overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1",
-          thumbnail ? "pt-0" : "",
           className
         )}
       >
-        {thumbnail && (
-          <div className="relative aspect-video w-full overflow-hidden">
-            <Image
-              src={thumbnail}
-              alt={title}
-              fill
-              className="object-cover transition-transform duration-300 hover:scale-105"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            />
-          </div>
-        )}
-
         <CardHeader>
           <h3 className="text-xl font-semibold line-clamp-2 mb-2">{title}</h3>
           <div className="flex items-center gap-4 text-sm text-muted-foreground">

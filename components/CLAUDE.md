@@ -171,13 +171,11 @@ Call-to-Action 섹션. 소셜 링크와 함께 강조된 메시지 표시.
 - `date`: 작성 날짜
 - `tags`: 태그 배열
 - `slug`: 포스트 슬러그 (URL)
-- `thumbnail`: 썸네일 이미지 URL (선택)
 - `readingTime`: 읽기 소요 시간 (분)
 - `className`: 추가 CSS 클래스
 
 **기능:**
-- 썸네일 이미지 지원 (aspect-video)
-- 호버 효과 (그림자, 이동, 이미지 확대)
+- 호버 효과 (그림자, 이동)
 - 날짜, 읽기 시간 표시
 - 태그 뱃지
 - Next.js Link 연동
@@ -201,7 +199,7 @@ Call-to-Action 섹션. 소셜 링크와 함께 강조된 메시지 표시.
 - 빈 상태 처리 ("No posts found")
 
 **타입:**
-- `BlogPost`: title, excerpt, date, tags, slug, thumbnail?, readingTime
+- `BlogPost`: title, excerpt, date, tags, slug, readingTime
 
 **사용 컴포넌트:**
 - BlogPostCard, Select
@@ -216,7 +214,6 @@ Call-to-Action 섹션. 소셜 링크와 함께 강조된 메시지 표시.
 - `readingTime`: 읽기 소요 시간
 - `content`: 마크다운 컨텐츠
 - `author`: 작성자 정보 (name, avatar?) (선택)
-- `thumbnail`: 썸네일 이미지 URL (선택)
 - `previousPost`: 이전 포스트 (title, slug) (선택)
 - `nextPost`: 다음 포스트 (title, slug) (선택)
 - `className`: 추가 CSS 클래스
@@ -224,7 +221,6 @@ Call-to-Action 섹션. 소셜 링크와 함께 강조된 메시지 표시.
 **구조:**
 - 메인 콘텐츠:
   - 헤더: 제목, 메타데이터 (날짜, 읽기 시간, 작성자), 태그
-  - 썸네일 이미지 (있는 경우)
   - 소셜 공유 버튼
   - 마크다운 본문
   - 포스트 네비게이션 (이전/다음)
@@ -464,7 +460,6 @@ interface BlogPost {
   date: string
   tags: string[]
   slug: string
-  thumbnail?: string
   readingTime: number
 }
 ```

@@ -33,7 +33,6 @@ export function getAllPosts(): BlogPost[] {
         excerpt: data.excerpt || "",
         date: data.date || new Date().toISOString(),
         tags: data.tags || [],
-        thumbnail: data.thumbnail,
         readingTime,
       };
     });

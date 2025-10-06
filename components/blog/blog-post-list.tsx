@@ -15,7 +15,6 @@ export interface BlogPost {
   date: string;
   tags: string[];
   slug: string;
-  thumbnail?: string;
   readingTime: number;
 }
 
@@ -67,7 +66,6 @@ export function BlogPostList({
             date={post.date}
             tags={post.tags}
             slug={post.slug}
-            thumbnail={post.thumbnail}
             readingTime={post.readingTime}
           />
         ))}

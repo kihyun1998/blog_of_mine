@@ -14,7 +14,6 @@ const mockPosts = [
     date: "2024-03-15",
     tags: ["Next.js", "React", "TypeScript"],
     slug: "getting-started-nextjs-15",
-    thumbnail: "/placeholder-thumbnail.jpg",
     readingTime: 5,
   },
   {
@@ -23,7 +22,6 @@ const mockPosts = [
     date: "2024-03-10",
     tags: ["CSS", "Tailwind", "Design"],
     slug: "building-modern-ui-tailwind",
-    thumbnail: "/placeholder-thumbnail.jpg",
     readingTime: 7,
   },
   {
@@ -32,7 +30,6 @@ const mockPosts = [
     date: "2024-03-05",
     tags: ["TypeScript", "JavaScript"],
     slug: "typescript-best-practices",
-    thumbnail: "/placeholder-thumbnail.jpg",
     readingTime: 8,
   },
   {
@@ -41,7 +38,6 @@ const mockPosts = [
     date: "2024-02-28",
     tags: ["React", "Next.js"],
     slug: "react-server-components-deep-dive",
-    thumbnail: "/placeholder-thumbnail.jpg",
     readingTime: 10,
   },
   {
@@ -50,7 +46,6 @@ const mockPosts = [
     date: "2024-02-20",
     tags: ["React", "State Management"],
     slug: "state-management-modern-react",
-    thumbnail: "/placeholder-thumbnail.jpg",
     readingTime: 6,
   },
   {
@@ -59,7 +54,6 @@ const mockPosts = [
     date: "2024-02-15",
     tags: ["Performance", "Web Development"],
     slug: "web-performance-optimization",
-    thumbnail: "/placeholder-thumbnail.jpg",
     readingTime: 9,
   },
 ];

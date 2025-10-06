@@ -29,13 +29,11 @@ export async function generateMetadata({
       type: "article",
       publishedTime: post.date,
       tags: post.tags,
-      images: post.thumbnail ? [post.thumbnail] : [],
     },
     twitter: {
       card: "summary_large_image",
       title: post.title,
       description: post.excerpt,
-      images: post.thumbnail ? [post.thumbnail] : [],
     },
   }
 }
@@ -65,7 +63,6 @@ export default function PostDetailPage({ params }: PostDetailPageProps) {
       readingTime={`${post.readingTime} min read`}
       content={post.content}
       author={post.author}
-      thumbnail={post.thumbnail}
       previousPost={previousPost}
       nextPost={nextPost}
     />
