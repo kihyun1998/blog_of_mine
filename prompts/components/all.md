@@ -10,11 +10,11 @@
 - [x] Style with Tailwind CSS using sticky positioning
 
 ### 2. BlogPost
-- [ ] Create `components/blog/blog-post.tsx`
-- [ ] Implement post metadata display (title, date, tags, reading time)
-- [ ] Add social share buttons component
-- [ ] Create previous/next post navigation
-- [ ] Integrate with MarkdownRenderer
+- [x] Create `components/blog/blog-post.tsx`
+- [x] Implement post metadata display (title, date, tags, reading time)
+- [x] Add social share buttons component
+- [x] Create previous/next post navigation
+- [x] Integrate with MarkdownRenderer
 
 ### 3. BlogPostCard
 - [x] Create `components/blog/blog-post-card.tsx`
@@ -57,12 +57,12 @@
 - [x] Simple results dropdown
 
 ### 9. TableOfContents
-- [ ] Create `components/content/table-of-contents.tsx`
-- [ ] Extract headings (h2, h3) from markdown content
-- [ ] Generate anchor IDs for each heading (slug conversion)
-- [ ] Implement click-to-scroll functionality
-- [ ] Add active section highlighting (Intersection Observer)
-- [ ] Style with indentation for heading hierarchy
+- [x] Create `components/content/table-of-contents.tsx`
+- [x] Extract headings (h2, h3) from markdown content
+- [x] Generate anchor IDs for each heading (slug conversion)
+- [x] Implement click-to-scroll functionality
+- [x] Add active section highlighting (Intersection Observer)
+- [x] Style with indentation for heading hierarchy
 
 ## Layout Components
 
@@ -81,13 +81,13 @@
 ## Home Page Components
 
 ### 12. Hero Section
-- [ ] Create `components/ui/hero-section.tsx`
-- [ ] Add main title (h1) and subtitle/description (p)
-- [ ] Support primary and secondary CTA buttons (optional props)
-- [ ] Implement gradient or neutral background
-- [ ] Responsive typography (mobile: smaller, desktop: larger)
-- [ ] Use existing Shadcn Button component
-- [ ] Implement as Server Component
+- [x] Create `components/ui/hero-section.tsx`
+- [x] Add main title (h1) and subtitle/description (p)
+- [x] Support primary and secondary CTA buttons (optional props)
+- [x] Implement gradient or neutral background
+- [x] Responsive typography (mobile: smaller, desktop: larger)
+- [x] Use existing Shadcn Button component
+- [x] Implement as Server Component
 
 **Props Interface:**
 ```typescript
@@ -107,13 +107,13 @@ interface HeroSectionProps {
 - Description: text-lg md:text-xl text-muted-foreground
 
 ### 13. CTA Section
-- [ ] Create `components/ui/cta-section.tsx`
-- [ ] Add title and description text
-- [ ] Support social links array (platform, url, icon)
-- [ ] Display social icons in horizontal grid/flex layout
-- [ ] Use Card component or colored background section
-- [ ] Center-aligned layout
-- [ ] Implement as Server Component
+- [x] Create `components/ui/cta-section.tsx`
+- [x] Add title and description text
+- [x] Support social links array (platform, url, icon)
+- [x] Display social icons in horizontal grid/flex layout
+- [x] Use Card component or colored background section
+- [x] Center-aligned layout
+- [x] Implement as Server Component
 
 **Props Interface:**
 ```typescript
