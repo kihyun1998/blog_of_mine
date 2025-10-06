@@ -52,7 +52,7 @@ export function BlogPost({
         <article className="min-w-0">
           {/* Post Header */}
           <header className="mb-8 space-y-4">
-            <h1 className="text-4xl font-bold tracking-tight lg:text-5xl">
+            <h1 className="pt-4 text-4xl font-bold tracking-tight lg:text-5xl">
               {title}
             </h1>
 
