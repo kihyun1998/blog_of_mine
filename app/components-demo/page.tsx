@@ -4,11 +4,16 @@ import { Footer } from "@/components/ui/footer";
 import { Container } from "@/components/ui/container";
 import { BlogPostCard } from "@/components/blog/blog-post-card";
 import { BlogPostList } from "@/components/blog/blog-post-list";
+import { BlogPost } from "@/components/blog/blog-post";
 import { MarkdownRenderer } from "@/components/content/markdown-renderer";
 import { CodeBlock } from "@/components/content/code-block";
 import { SearchBarDemo } from "@/components/demo/search-bar-demo";
 import { Pagination } from "@/components/ui/pagination";
 import { PaginationClient } from "@/components/ui/pagination-client";
+import { TableOfContents } from "@/components/content/table-of-contents";
+import { HeroSection } from "@/components/ui/hero-section";
+import { CTASection } from "@/components/ui/cta-section";
+import { Github, Twitter, Linkedin, Mail } from "lucide-react";
 
 const THUMB_COUNT = 2;
 const getRandomThumb = () => `/thumb/thumb${Math.floor(Math.random() * THUMB_COUNT) + 1}.jpg`;
@@ -446,6 +451,310 @@ print(fibonacci(10))`}
               </section>
 
               <section className="space-y-4">
+                <h2 className="text-2xl font-semibold">BlogPost Component</h2>
+                <p className="text-muted-foreground mb-4">
+                  A full blog post component with metadata, social sharing, and navigation.
+                </p>
+                <BlogPost
+                  title="Understanding React Server Components"
+                  date="2024-03-20"
+                  tags={["React", "Next.js", "Server Components"]}
+                  readingTime="10 min read"
+                  author={{
+                    name: "John Doe",
+                    avatar: "/thumb/thumb1.jpg"
+                  }}
+                  content={`# Understanding React Server Components
+
+React Server Components represent a paradigm shift in how we build React applications. This article explores their benefits and use cases.
+
+## What are Server Components?
+
+Server Components are a new type of component that runs **exclusively on the server**. They allow you to:
+
+- Fetch data directly from databases
+- Access backend resources securely
+- Reduce client-side JavaScript bundle size
+- Improve initial page load performance
+
+## Key Benefits
+
+1. **Zero Bundle Size**: Server Components don't ship JavaScript to the client
+2. **Direct Backend Access**: Query databases and APIs without exposing credentials
+3. **Automatic Code Splitting**: Only client components are included in bundles
+4. **Improved Performance**: Faster initial loads and better Core Web Vitals
+
+## Example Code
+
+Here's a simple Server Component:
+
+\`\`\`tsx
+// app/posts/page.tsx (Server Component by default)
+async function BlogPosts() {
+  const posts = await db.posts.findMany();
+
+  return (
+    <div>
+      {posts.map(post => (
+        <PostCard key={post.id} post={post} />
+      ))}
+    </div>
+  );
+}
+\`\`\`
+
+## When to Use Client Components
+
+You still need Client Components for:
+
+- Interactive elements (buttons, forms)
+- Browser APIs (localStorage, geolocation)
+- State management (useState, useReducer)
+- Event handlers (onClick, onChange)
+
+## Best Practices
+
+> Always start with Server Components by default, and only use \`"use client"\` when you need interactivity or browser APIs.
+
+### Component Composition
+
+| Component Type | Use Case | Example |
+|----------------|----------|---------|
+| Server | Data fetching | Blog post list |
+| Client | Interactivity | Search bar, filters |
+| Mixed | Both | Post with comments |
+
+## Conclusion
+
+React Server Components are a powerful tool for building performant applications. By understanding when to use server vs. client components, you can create faster, more efficient React apps.
+
+[Learn more about Server Components](https://nextjs.org/docs/app/building-your-application/rendering/server-components)
+
+---
+
+Happy coding!`}
+                  previousPost={{
+                    title: "Getting Started with Next.js 15",
+                    slug: "getting-started-nextjs-15"
+                  }}
+                  nextPost={{
+                    title: "TypeScript Best Practices for 2024",
+                    slug: "typescript-best-practices-2024"
+                  }}
+                />
+              </section>
+
+              <section className="space-y-4">
+                <h2 className="text-2xl font-semibold">BlogPost Features</h2>
+                <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+                  <li>Post metadata display (title, date, tags, reading time)</li>
+                  <li>Author information with avatar support</li>
+                  <li>Social share buttons (Twitter, Facebook, LinkedIn, Copy link)</li>
+                  <li>Integrated MarkdownRenderer for content</li>
+                  <li>Previous/Next post navigation</li>
+                  <li>Responsive typography with prose classes</li>
+                  <li>Dark mode support</li>
+                  <li>Separator components for visual hierarchy</li>
+                  <li>Badge components for tags</li>
+                  <li>Icon integration (Calendar, Clock, User from Lucide)</li>
+                </ul>
+              </section>
+
+              <section className="space-y-4">
+                <h2 className="text-2xl font-semibold">TableOfContents Component</h2>
+                <p className="text-muted-foreground mb-4">
+                  A table of contents component that automatically extracts headings from markdown content with active section tracking.
+                </p>
+                <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1fr_250px]">
+                  <div className="border rounded-lg p-6">
+                    <MarkdownRenderer
+                      content={`# Main Title
+
+This is some introductory content before the first heading.
+
+## First Section
+
+This is the content of the first section. It contains important information about the topic.
+
+### Subsection 1.1
+
+Details about the first subsection. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+### Subsection 1.2
+
+More details in another subsection. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+## Second Section
+
+Here's another major section with different content. This demonstrates how the table of contents handles multiple sections.
+
+### Subsection 2.1
+
+Content for this subsection goes here. The table of contents will highlight the active section as you scroll.
+
+### Subsection 2.2
+
+Additional subsection content to showcase the hierarchy.
+
+## Third Section
+
+Final section to demonstrate the full functionality of the table of contents component.
+
+### Subsection 3.1
+
+Last subsection with some closing remarks and examples.`}
+                    />
+                  </div>
+                  <div className="hidden lg:block">
+                    <div className="sticky top-20 border rounded-lg p-4">
+                      <TableOfContents
+                        content={`# Main Title
+
+This is some introductory content before the first heading.
+
+## First Section
+
+This is the content of the first section. It contains important information about the topic.
+
+### Subsection 1.1
+
+Details about the first subsection. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+### Subsection 1.2
+
+More details in another subsection. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+## Second Section
+
+Here's another major section with different content. This demonstrates how the table of contents handles multiple sections.
+
+### Subsection 2.1
+
+Content for this subsection goes here. The table of contents will highlight the active section as you scroll.
+
+### Subsection 2.2
+
+Additional subsection content to showcase the hierarchy.
+
+## Third Section
+
+Final section to demonstrate the full functionality of the table of contents component.
+
+### Subsection 3.1
+
+Last subsection with some closing remarks and examples.`}
+                      />
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section className="space-y-4">
+                <h2 className="text-2xl font-semibold">TableOfContents Features</h2>
+                <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+                  <li>Automatic heading extraction from markdown (h2 and h3)</li>
+                  <li>Generates URL-safe slugs for anchor IDs</li>
+                  <li>Smooth scroll behavior on click</li>
+                  <li>Active section highlighting using Intersection Observer</li>
+                  <li>Hierarchical indentation (h2 vs h3)</li>
+                  <li>Sticky positioning for desktop sidebar</li>
+                  <li>Hidden on mobile, visible on large screens</li>
+                  <li>Synchronized with MarkdownRenderer heading IDs</li>
+                  <li>URL hash updates on navigation</li>
+                  <li>Server Component for heading parsing, Client Component for interactivity</li>
+                </ul>
+              </section>
+
+              <section className="space-y-4">
+                <h2 className="text-2xl font-semibold">HeroSection Component</h2>
+                <p className="text-muted-foreground mb-4">
+                  A hero section component for landing pages with title, description, and optional CTA buttons.
+                </p>
+                <div className="border rounded-lg overflow-hidden">
+                  <HeroSection
+                    title="Welcome to My Blog"
+                    description="Discover insightful articles about web development, design, and technology. Join our community of developers and designers."
+                    primaryCta={{ text: "Get Started", href: "/blog" }}
+                    secondaryCta={{ text: "Learn More", href: "/about" }}
+                  />
+                </div>
+                <div className="border rounded-lg overflow-hidden mt-4">
+                  <HeroSection
+                    title="Build Modern Web Applications"
+                    description="Learn the latest techniques in Next.js, React, and TypeScript to create fast, scalable applications."
+                  />
+                </div>
+                <div className="border rounded-lg overflow-hidden mt-4">
+                  <HeroSection
+                    title="Ready to Start Your Journey?"
+                    description="Explore our comprehensive guides and tutorials designed for developers of all skill levels."
+                    primaryCta={{ text: "Browse Articles", href: "/blog" }}
+                  />
+                </div>
+              </section>
+
+              <section className="space-y-4">
+                <h2 className="text-2xl font-semibold">HeroSection Features</h2>
+                <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+                  <li>Server Component (no client-side JavaScript)</li>
+                  <li>Responsive typography (text-4xl on mobile, text-6xl on desktop)</li>
+                  <li>Optional primary and secondary CTA buttons</li>
+                  <li>Uses Shadcn/ui Button component with Next.js Link</li>
+                  <li>Center-aligned content layout</li>
+                  <li>Vertical spacing: py-16 on mobile, py-24 on desktop</li>
+                  <li>Integrates with Container component for responsive width</li>
+                  <li>Dark mode support via Tailwind classes</li>
+                  <li>Description with muted-foreground styling</li>
+                  <li>Flexible button layout (stacked on mobile, horizontal on desktop)</li>
+                </ul>
+              </section>
+
+              <section className="space-y-4">
+                <h2 className="text-2xl font-semibold">CTASection Component</h2>
+                <p className="text-muted-foreground mb-4">
+                  A call-to-action section with social links, typically placed above the footer.
+                </p>
+                <CTASection
+                  title="Connect With Me"
+                  description="Follow me on social media for updates, insights, and more content about web development."
+                  socialLinks={[
+                    { platform: "GitHub", url: "https://github.com", icon: <Github /> },
+                    { platform: "Twitter", url: "https://twitter.com", icon: <Twitter /> },
+                    { platform: "LinkedIn", url: "https://linkedin.com", icon: <Linkedin /> },
+                    { platform: "Email", url: "mailto:hello@example.com", icon: <Mail /> },
+                  ]}
+                />
+                <div className="mt-4">
+                  <CTASection
+                    title="Stay Updated"
+                    description="Join our newsletter for weekly updates and exclusive content."
+                    socialLinks={[
+                      { platform: "GitHub", url: "https://github.com", icon: <Github /> },
+                      { platform: "Twitter", url: "https://twitter.com", icon: <Twitter /> },
+                    ]}
+                  />
+                </div>
+              </section>
+
+              <section className="space-y-4">
+                <h2 className="text-2xl font-semibold">CTASection Features</h2>
+                <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+                  <li>Server Component (no client-side JavaScript)</li>
+                  <li>Card-based layout with border styling</li>
+                  <li>Center-aligned content</li>
+                  <li>Responsive title (text-3xl on mobile, text-4xl on desktop)</li>
+                  <li>Social links with hover effects</li>
+                  <li>Icon size: 24px (w-6 h-6)</li>
+                  <li>Horizontal flex layout with gap-4</li>
+                  <li>Vertical spacing: py-12 on mobile, py-16 on desktop</li>
+                  <li>Dark mode support</li>
+                  <li>Integrates with Container component</li>
+                  <li>External link handling (target="_blank", rel="noopener noreferrer")</li>
+                  <li>ARIA labels for accessibility</li>
+                </ul>
+              </section>
+
+              <section className="space-y-4">
                 <h2 className="text-2xl font-semibold">Component Stack</h2>
                 <div className="grid gap-4 md:grid-cols-2">
                   <div className="p-4 border rounded-lg">
@@ -454,6 +763,8 @@ print(fibonacci(10))`}
                       <li>• Container</li>
                       <li>• Header</li>
                       <li>• Footer</li>
+                      <li>• HeroSection</li>
+                      <li>• CTASection</li>
                       <li>• SearchBar</li>
                       <li>• Pagination</li>
                       <li>• Button (Shadcn)</li>
@@ -469,8 +780,10 @@ print(fibonacci(10))`}
                   <div className="p-4 border rounded-lg">
                     <h3 className="font-semibold mb-2">Blog Components</h3>
                     <ul className="text-sm text-muted-foreground space-y-1">
+                      <li>• BlogPost</li>
                       <li>• BlogPostCard</li>
                       <li>• BlogPostList</li>
+                      <li>• PostNavigation</li>
                     </ul>
                   </div>
                   <div className="p-4 border rounded-lg">
@@ -479,11 +792,13 @@ print(fibonacci(10))`}
                       <li>• MarkdownRenderer</li>
                       <li>• CodeBlock</li>
                       <li>• CopyButton</li>
+                      <li>• TableOfContents</li>
                     </ul>
                   </div>
                   <div className="p-4 border rounded-lg">
                     <h3 className="font-semibold mb-2">Shared Components</h3>
                     <ul className="text-sm text-muted-foreground space-y-1">
+                      <li>• SocialShare</li>
                       <li>• Theme Toggle</li>
                       <li>• Theme Provider</li>
                     </ul>

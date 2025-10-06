@@ -10,20 +10,11 @@
 - [x] Style with Tailwind CSS using sticky positioning
 
 ### 2. BlogPost
-- [ ] Create `components/blog/blog-post.tsx`
-- [ ] Implement post metadata display (title, date, tags, reading time)
-- [ ] Add social share buttons component
-- [ ] Create previous/next post navigation
-- [ ] Integrate with MarkdownRenderer
-- [ ] Add Table of Contents (ToC) component integration
-
-### 2-1. TableOfContents (ToC)
-- [ ] Create `components/content/table-of-contents.tsx`
-- [ ] Extract headings (h2, h3) from markdown content
-- [ ] Generate anchor links for each heading
-- [ ] Add smooth scroll to section on click
-- [ ] Highlight active section on scroll (optional)
-- [ ] Sticky positioning on desktop, collapsible on mobile
+- [x] Create `components/blog/blog-post.tsx`
+- [x] Implement post metadata display (title, date, tags, reading time)
+- [x] Add social share buttons component
+- [x] Create previous/next post navigation
+- [x] Integrate with MarkdownRenderer
 
 ### 3. BlogPostCard
 - [x] Create `components/blog/blog-post-card.tsx`
@@ -65,20 +56,85 @@
 - [x] Add debounced search functionality
 - [x] Simple results dropdown
 
+### 9. TableOfContents
+- [x] Create `components/content/table-of-contents.tsx`
+- [x] Extract headings (h2, h3) from markdown content
+- [x] Generate anchor IDs for each heading (slug conversion)
+- [x] Implement click-to-scroll functionality
+- [x] Add active section highlighting (Intersection Observer)
+- [x] Style with indentation for heading hierarchy
 
 ## Layout Components
 
-### 9. Container
+### 10. Container
 - [x] Create `components/ui/container.tsx`
 - [x] Implement responsive max-width container
 - [x] Add proper padding and margin utilities
 - [x] Support different container sizes
 
-### 10. Pagination
+### 11. Pagination
 - [x] Create `components/ui/pagination.tsx`
 - [x] Simple numbered pagination with prev/next
 - [x] Highlight current page
 - [x] Mobile-responsive design
+
+## Home Page Components
+
+### 12. Hero Section
+- [x] Create `components/ui/hero-section.tsx`
+- [x] Add main title (h1) and subtitle/description (p)
+- [x] Support primary and secondary CTA buttons (optional props)
+- [x] Implement gradient or neutral background
+- [x] Responsive typography (mobile: smaller, desktop: larger)
+- [x] Use existing Shadcn Button component
+- [x] Implement as Server Component
+
+**Props Interface:**
+```typescript
+interface HeroSectionProps {
+  title: string
+  description: string
+  primaryCta?: { text: string; href: string }
+  secondaryCta?: { text: string; href: string }
+}
+```
+
+**Layout:**
+- Full-width section with Container wrapper
+- Center-aligned content
+- Vertical spacing: py-16 md:py-24
+- Title: text-4xl md:text-6xl font-bold
+- Description: text-lg md:text-xl text-muted-foreground
+
+### 13. CTA Section
+- [x] Create `components/ui/cta-section.tsx`
+- [x] Add title and description text
+- [x] Support social links array (platform, url, icon)
+- [x] Display social icons in horizontal grid/flex layout
+- [x] Use Card component or colored background section
+- [x] Center-aligned layout
+- [x] Implement as Server Component
+
+**Props Interface:**
+```typescript
+interface CTASectionProps {
+  title: string
+  description: string
+  socialLinks: Array<{
+    platform: string
+    url: string
+    icon: ReactNode
+  }>
+}
+```
+
+**Layout:**
+- Card-based or background section
+- Center-aligned content
+- Social links: flex gap-4 justify-center
+- Icon size: 24px (Lucide icons)
+- Vertical spacing: py-12 md:py-16
+- Place above Footer in page layout
 
 ## Implementation Notes
 
@@ -89,3 +145,5 @@
 - Keep components simple and focused
 - Use Next.js App Router patterns
 - Add proper prop types and interfaces
+- **Prioritize Server Components over Client Components**
+- **NO emojis in design or code**
