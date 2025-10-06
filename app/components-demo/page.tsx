@@ -12,6 +12,8 @@ import { Pagination } from "@/components/ui/pagination";
 import { PaginationClient } from "@/components/ui/pagination-client";
 import { TableOfContents } from "@/components/content/table-of-contents";
 import { HeroSection } from "@/components/ui/hero-section";
+import { CTASection } from "@/components/ui/cta-section";
+import { Github, Twitter, Linkedin, Mail } from "lucide-react";
 
 const THUMB_COUNT = 2;
 const getRandomThumb = () => `/thumb/thumb${Math.floor(Math.random() * THUMB_COUNT) + 1}.jpg`;
@@ -708,6 +710,51 @@ Last subsection with some closing remarks and examples.`}
               </section>
 
               <section className="space-y-4">
+                <h2 className="text-2xl font-semibold">CTASection Component</h2>
+                <p className="text-muted-foreground mb-4">
+                  A call-to-action section with social links, typically placed above the footer.
+                </p>
+                <CTASection
+                  title="Connect With Me"
+                  description="Follow me on social media for updates, insights, and more content about web development."
+                  socialLinks={[
+                    { platform: "GitHub", url: "https://github.com", icon: <Github /> },
+                    { platform: "Twitter", url: "https://twitter.com", icon: <Twitter /> },
+                    { platform: "LinkedIn", url: "https://linkedin.com", icon: <Linkedin /> },
+                    { platform: "Email", url: "mailto:hello@example.com", icon: <Mail /> },
+                  ]}
+                />
+                <div className="mt-4">
+                  <CTASection
+                    title="Stay Updated"
+                    description="Join our newsletter for weekly updates and exclusive content."
+                    socialLinks={[
+                      { platform: "GitHub", url: "https://github.com", icon: <Github /> },
+                      { platform: "Twitter", url: "https://twitter.com", icon: <Twitter /> },
+                    ]}
+                  />
+                </div>
+              </section>
+
+              <section className="space-y-4">
+                <h2 className="text-2xl font-semibold">CTASection Features</h2>
+                <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+                  <li>Server Component (no client-side JavaScript)</li>
+                  <li>Card-based layout with border styling</li>
+                  <li>Center-aligned content</li>
+                  <li>Responsive title (text-3xl on mobile, text-4xl on desktop)</li>
+                  <li>Social links with hover effects</li>
+                  <li>Icon size: 24px (w-6 h-6)</li>
+                  <li>Horizontal flex layout with gap-4</li>
+                  <li>Vertical spacing: py-12 on mobile, py-16 on desktop</li>
+                  <li>Dark mode support</li>
+                  <li>Integrates with Container component</li>
+                  <li>External link handling (target="_blank", rel="noopener noreferrer")</li>
+                  <li>ARIA labels for accessibility</li>
+                </ul>
+              </section>
+
+              <section className="space-y-4">
                 <h2 className="text-2xl font-semibold">Component Stack</h2>
                 <div className="grid gap-4 md:grid-cols-2">
                   <div className="p-4 border rounded-lg">
@@ -717,6 +764,7 @@ Last subsection with some closing remarks and examples.`}
                       <li>• Header</li>
                       <li>• Footer</li>
                       <li>• HeroSection</li>
+                      <li>• CTASection</li>
                       <li>• SearchBar</li>
                       <li>• Pagination</li>
                       <li>• Button (Shadcn)</li>
