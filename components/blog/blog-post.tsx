@@ -1,3 +1,4 @@
+import Image from "next/image"
 import { Calendar, Clock, User } from "lucide-react"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
@@ -20,6 +21,7 @@ interface BlogPostProps {
   readingTime: string
   content: string
   author?: Author
+  thumbnail?: string
   previousPost?: {
     title: string
     slug: string
@@ -38,6 +40,7 @@ export function BlogPost({
   readingTime,
   content,
   author,
+  thumbnail,
   previousPost,
   nextPost,
   className,
@@ -96,6 +99,19 @@ export function BlogPost({
               </div>
             )}
           </header>
+
+          {/* Thumbnail */}
+          {thumbnail && (
+            <div className="relative mb-8 aspect-video w-full overflow-hidden rounded-lg">
+              <Image
+                src={thumbnail}
+                alt={title}
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+          )}
 
           <Separator className="my-8" />
 

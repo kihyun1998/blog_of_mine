@@ -13,8 +13,6 @@ import { PaginationClient } from "@/components/ui/pagination-client";
 import { TableOfContents } from "@/components/content/table-of-contents";
 import { HeroSection } from "@/components/ui/hero-section";
 import { CTASection } from "@/components/ui/cta-section";
-import { PostTitle } from "@/components/blog/post-title";
-import { PostMetadata } from "@/components/blog/post-metadata";
 import { Github, Twitter, Linkedin, Mail } from "lucide-react";
 
 const THUMB_COUNT = 2;
@@ -757,101 +755,6 @@ Last subsection with some closing remarks and examples.`}
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-semibold">PostTitle Component</h2>
-                <p className="text-muted-foreground mb-4">
-                  A dedicated component for displaying blog post titles with consistent typography.
-                </p>
-                <div className="border rounded-lg p-6 space-y-4">
-                  <PostTitle title="Understanding React Server Components" />
-                  <PostTitle title="Building Modern Web Applications" />
-                  <PostTitle title="TypeScript Best Practices" className="text-primary" />
-                </div>
-              </section>
-
-              <section className="space-y-4">
-                <h2 className="text-2xl font-semibold">PostTitle Features</h2>
-                <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-                  <li>Server Component (no client-side JavaScript)</li>
-                  <li>Responsive typography (text-4xl on mobile, text-5xl on desktop)</li>
-                  <li>Bold font with tight tracking</li>
-                  <li>Uses cn() utility for className merging</li>
-                  <li>Simple, focused implementation</li>
-                  <li>Semantic h1 HTML tag</li>
-                  <li>Dark mode support</li>
-                  <li>Extracted from blog-post.tsx for reusability</li>
-                </ul>
-              </section>
-
-              <section className="space-y-4">
-                <h2 className="text-2xl font-semibold">PostMetadata Component</h2>
-                <p className="text-muted-foreground mb-4">
-                  A reusable component for displaying post metadata including date, reading time, author, and tags.
-                </p>
-                <div className="border rounded-lg p-6 space-y-6">
-                  <div className="space-y-2">
-                    <p className="text-sm font-medium">Basic Metadata (Date & Reading Time)</p>
-                    <PostMetadata
-                      date="2024-03-20"
-                      readingTime="10 min read"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <p className="text-sm font-medium">With Author (No Avatar)</p>
-                    <PostMetadata
-                      date="2024-03-20"
-                      readingTime="10 min read"
-                      author={{ name: "John Doe" }}
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <p className="text-sm font-medium">With Author Avatar</p>
-                    <PostMetadata
-                      date="2024-03-20"
-                      readingTime="10 min read"
-                      author={{ name: "Jane Smith", avatar: "/thumb/thumb1.jpg" }}
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <p className="text-sm font-medium">With Tags</p>
-                    <PostMetadata
-                      date="2024-03-20"
-                      readingTime="10 min read"
-                      tags={["React", "Next.js", "TypeScript"]}
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <p className="text-sm font-medium">Complete Metadata (All Props)</p>
-                    <PostMetadata
-                      date="2024-03-20"
-                      readingTime="10 min read"
-                      author={{ name: "John Doe", avatar: "/thumb/thumb2.jpg" }}
-                      tags={["React", "Server Components", "Performance", "Tutorial"]}
-                    />
-                  </div>
-                </div>
-              </section>
-
-              <section className="space-y-4">
-                <h2 className="text-2xl font-semibold">PostMetadata Features</h2>
-                <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-                  <li>Server Component (no client-side JavaScript)</li>
-                  <li>Display date with Calendar icon</li>
-                  <li>Display reading time with Clock icon</li>
-                  <li>Optional author information with avatar or User icon</li>
-                  <li>Optional tags displayed as Badge components</li>
-                  <li>Two-line layout: metadata first, tags second</li>
-                  <li>Separator between metadata items (vertical, h-4)</li>
-                  <li>Avatar component with fallback (first letter of name)</li>
-                  <li>Text styling: text-sm text-muted-foreground</li>
-                  <li>Icon size: h-4 w-4 (Avatar: h-6 w-6)</li>
-                  <li>Flex layout with responsive wrapping</li>
-                  <li>Uses cn() utility for className merging</li>
-                  <li>Dark mode support</li>
-                  <li>Extracted from blog-post.tsx for reusability</li>
-                </ul>
-              </section>
-
-              <section className="space-y-4">
                 <h2 className="text-2xl font-semibold">Component Stack</h2>
                 <div className="grid gap-4 md:grid-cols-2">
                   <div className="p-4 border rounded-lg">
@@ -881,8 +784,6 @@ Last subsection with some closing remarks and examples.`}
                       <li>• BlogPostCard</li>
                       <li>• BlogPostList</li>
                       <li>• PostNavigation</li>
-                      <li>• PostTitle</li>
-                      <li>• PostMetadata</li>
                     </ul>
                   </div>
                   <div className="p-4 border rounded-lg">
