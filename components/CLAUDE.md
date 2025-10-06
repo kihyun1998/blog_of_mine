@@ -212,22 +212,27 @@ Call-to-Action 섹션. 소셜 링크와 함께 강조된 메시지 표시.
 **Props:**
 - `title`: 포스트 제목
 - `date`: 작성 날짜
-- `readingTime`: 읽기 소요 시간
 - `tags`: 태그 배열
+- `readingTime`: 읽기 소요 시간
 - `content`: 마크다운 컨텐츠
-- `author`: 작성자 정보 (name, avatar, bio)
-- `showTableOfContents`: 목차 표시 여부 - 기본값: true
-- `showSocialShare`: 소셜 공유 버튼 표시 여부 - 기본값: true
+- `author`: 작성자 정보 (name, avatar?) (선택)
+- `thumbnail`: 썸네일 이미지 URL (선택)
+- `previousPost`: 이전 포스트 (title, slug) (선택)
+- `nextPost`: 다음 포스트 (title, slug) (선택)
 - `className`: 추가 CSS 클래스
 
 **구조:**
-- 헤더: 제목, 날짜, 읽기 시간, 태그
-- 사이드바 (데스크탑): 목차, 작성자 정보, 소셜 공유
-- 본문: 마크다운 렌더링
-- 모바일: 순차적 레이아웃
+- 메인 콘텐츠:
+  - 헤더: 제목, 메타데이터 (날짜, 읽기 시간, 작성자), 태그
+  - 썸네일 이미지 (있는 경우)
+  - 소셜 공유 버튼
+  - 마크다운 본문
+  - 포스트 네비게이션 (이전/다음)
+- 사이드바 (데스크탑, lg 이상): 목차 (sticky)
+- 반응형: lg 미만에서는 사이드바 숨김
 
 **사용 컴포넌트:**
-- MarkdownRenderer, TableOfContents, SocialShare, Badge, Avatar
+- MarkdownRenderer, TableOfContents, SocialShare, PostNavigation, Badge, Avatar, Calendar/Clock/User 아이콘
 
 ### `post-navigation.tsx`
 이전/다음 포스트 네비게이션 컴포넌트 (Server Component).
