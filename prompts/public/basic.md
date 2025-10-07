@@ -1,5 +1,15 @@
 # 프롬프트 모음
 
+## 초기
+
+```text
+npx create-next-app@latest .
+```
+
+```text
+npx shadcn@latest init
+```
+
 ## 필요 컴포넌트 리스트 업
 
 ```text

@@ -1,0 +1,25 @@
+● 블로그 포스팅 기능에 필요한 추가 컴포넌트들:
+
+  작성/편집 관련
+
+  - post-editor.tsx - 마크다운 에디터 (textarea + 실시간 프리뷰)
+  - post-form.tsx - 포스트 메타데이터 입력 폼 (제목, 태그, 날짜 등)
+  - tag-input.tsx - 태그 입력/관리 컴포넌트
+  - image-uploader.tsx - 이미지 업로드/관리
+
+  관리 관련
+
+  - post-list-admin.tsx - 관리자용 포스트 목록 (편집/삭제 버튼 포함)
+  - post-actions.tsx - 포스트 액션 버튼 (편집, 삭제, 공개/비공개)
+  - draft-indicator.tsx - 초안 상태 표시
+
+  유틸리티
+
+  - markdown-toolbar.tsx - 마크다운 작성 도구바 (굵게, 이탤릭, 링크 등)      
+  - auto-save-indicator.tsx - 자동 저장 상태 표시
+
+  필요한 페이지
+
+  - app/admin/posts/new/page.tsx - 새 포스트 작성
+  - app/admin/posts/[slug]/edit/page.tsx - 포스트 편집
+  - app/admin/posts/page.tsx - 포스트 관리 목록
